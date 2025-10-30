@@ -22,7 +22,7 @@ export const useBookmarkStore = create((set, get) => ({
   ) => {
     try {
       console.log(bookmark);
-      const { data } = await axiosInstance.post(`/api/add_bookmark`, bookmark);
+      const { data } = await axiosInstance.post(`/add_bookmark`, bookmark);
       get().readBookmarks();
       toast.success("즐겨찾기를 추가했습니다.");
     } catch (err) {
@@ -30,13 +30,13 @@ export const useBookmarkStore = create((set, get) => ({
     }
   },
   readBookmarks: async () => {
-    const { data } = await axiosInstance.get(`/api/bookmarks`);
+    const { data } = await axiosInstance.get(`/bookmarks`);
     set({ bookmarks: data });
   },
   deleteBookmark: async (
     id // 특정 ID의 북마크 삭제 액션
   ) => {
-    const { data } = await axiosInstance.post(`/api/delete_bookmark`, { bookmark_id: id });
+    const { data } = await axiosInstance.post(`/delete_bookmark`, { bookmark_id: id });
     get().readBookmarks();
     toast.success("즐겨찾기를 삭제했습니다.");
   },
@@ -45,7 +45,7 @@ export const useBookmarkStore = create((set, get) => ({
   ) => {
     try {
       console.log(bookmark);
-      const { data } = await axiosInstance.post(`/api/update_bookmark`, bookmark);
+      const { data } = await axiosInstance.post(`/update_bookmark`, bookmark);
       get().readBookmarks();
       toast.success("즐겨찾기를 수정했습니다.");
     } catch (err) {

@@ -47,7 +47,7 @@ export const useChatStore = create((set, get) => ({
   getUsers: async () => {
     set({ isUsersLoading: true });
     try {
-      const res = await axiosInstance.get("/api/users");
+      const res = await axiosInstance.get("/users");
       set({ users: res.data });
     } catch (err) {
       toast.error(err.response?.data?.message || err.message);
@@ -60,7 +60,7 @@ export const useChatStore = create((set, get) => ({
   getSessions: async () => {
     set({ isSessionsLoading: true });
     try {
-      const { data } = await axiosInstance.get("/api/sessions");
+      const { data } = await axiosInstance.get("/sessions");
       set({ sessions: data });
     } catch (err) {
       toast.error(err.response?.data?.message || err.message);
@@ -80,7 +80,7 @@ export const useChatStore = create((set, get) => ({
     console.log("🚀 '새 채팅' 생성을 요청합니다. 제목:", title || "(제목 없음)");
     
     try {
-      const { data } = await axiosInstance.post("/api/sessions", { title });
+      const { data } = await axiosInstance.post("/sessions", { title });
       
       // ▼▼▼▼▼ 2. 서버로부터 받은 응답 로그 추가 ▼▼▼▼▼
       console.log("✅ '새 채팅' 생성 성공! 서버 응답:", data);
@@ -104,7 +104,7 @@ export const useChatStore = create((set, get) => ({
     }
     set({ currentSessionId: sessionId, isMessagesLoading: true, messages: [] });
     try {
-      const { data } = await axiosInstance.get(`/api/sessions/${sessionId}/logs`);
+      const { data } = await axiosInstance.get(`/sessions/${sessionId}/logs`);
       set({ messages: data });
     } catch (err) {
       toast.error(err.response?.data?.message || err.message);
@@ -116,7 +116,7 @@ export const useChatStore = create((set, get) => ({
 
   deleteSession: async (sessionId) => {
     try {
-      await axiosInstance.delete(`/api/sessions/${sessionId}`, {
+      await axiosInstance.delete(`/sessions/${sessionId}`, {
         withCredentials: true,
       });
       set((state) => {
