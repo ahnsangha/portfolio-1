@@ -54,7 +54,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5173",
-    "https://portfolio-1-frontend-coral.vercel.app",
+    "https://portfolio-1-nu-navy.vercel.app",
 ]
 
 app.add_middleware(
@@ -322,5 +322,6 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=True)
+
 
 
