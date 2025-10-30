@@ -1,7 +1,7 @@
-#  마음맛집 (Mind-Taste-Place) 
+#  마음맛집
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/) [![FastAPI](https://img.shields.io/badge/FastAPI-0.103-green.svg)](https://fastapi.tiangolo.com/) [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-orange.svg)](https://www.sqlalchemy.org/)
-[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/) [![Vite](https://img.shields.io/badge/Vite-5.2-purple.svg)](https://vitejs.dev/) [![Zustand](https://img.shields.io/badge/Zustand-4.5-yellow.svg)](https://github.com/pmndrs/zustand) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-cyan.svg)](https://tailwindcss.com/)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/) [![Vite](https://img.shields.io/badge/Vite-5.2-purple.svg)](https://vitejs.dev/) [![Zustand](https://img.shields.io/badge/Zustand-4.5-yellow.svg)](https://github.com/pmndrs/zustand) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-cyan.svg)](https://tailwindcss.com/)  
 FastAPI와 다양한 AI 모델을 기반으로 사용자의 감정에 맞는 음식을 추천하고, 근처 맛집 정보를 제공하는 AI 챗봇 API 서버입니다.
 
 ## Backend
